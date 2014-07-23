@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : dimens.xml
+    Created on : 9 mei 2012, 8:41
+    Author     : frankkie
+    Description:
+        Purpose of the document follows.
+-->
+
+<resources>
+  <dimen name="key_height">45dip</dimen>
+</resources>
