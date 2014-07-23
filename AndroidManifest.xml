@@ -2,6 +2,9 @@
 <!-- 
 Changelog:
 
+1.3:
+added: vibrate on keypress (Idea by DataByteBrony)
+
 1.2
 fix: keyboard to big in landscape-mode on smartphones
 fix: Gesturefile copy to sd
@@ -15,47 +18,46 @@ fix: keyboard way to big on non-tablet devices
 initial release
 //-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="nl.frankkie.styluskeyboard"
-      android:versionCode="3"
-      android:versionName="1.2"
-      android:installLocation="auto">
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-  <uses-sdk android:targetSdkVersion="15" android:minSdkVersion="7"/>
-  <application android:label="@string/app_name" android:icon="@drawable/icon">
-    <!-- KEYBOARD //-->
-    <service android:name="com.example.android.softkeyboard.SoftKeyboard" android:permission="android.permission.BIND_INPUT_METHOD">
-      <intent-filter>
-        <action android:name="android.view.InputMethod"/>
-      </intent-filter>
-      <meta-data android:name="android.view.im" android:resource="@xml/method"/>
-    </service>
-    <activity android:name="com.example.android.softkeyboard.ImePreferences" android:label="@string/settings_name">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-      </intent-filter>
-    </activity>
-    <!-- ENDOF KEYBOARD //-->
-    <!-- GESTUER BUILDER //-->
-    <activity android:name="com.android.gesture.builder.GestureBuilderActivity" android:label="@string/application_name" 
-    android:icon="@drawable/ic_gesturebuilder">
-      <intent-filter>
-        <!--
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
-        <category android:name="android.intent.category.DEFAULT"/>
-        -->
-      </intent-filter>
-    </activity>
-    <activity android:name="com.android.gesture.builder.CreateGestureActivity" android:label="@string/label_create_gesture"/>
-    <!-- ENDOF GESTUREBUILDER //-->
-    <activity android:name="MainActivity"
-                  android:label="@string/app_name">
-      <intent-filter>
-        
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-        
-      </intent-filter>
-    </activity>
-  </application>
+          package="nl.frankkie.styluskeyboard"
+          android:versionCode="4"
+          android:versionName="1.3"
+          android:installLocation="auto">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-sdk android:targetSdkVersion="15" android:minSdkVersion="7"/>
+    <application android:label="@string/app_name" android:icon="@drawable/icon">
+        <!-- KEYBOARD //-->
+        <service android:name="com.example.android.softkeyboard.SoftKeyboard" android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod"/>
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method"/>
+        </service>
+        <activity android:name="com.example.android.softkeyboard.ImePreferences" android:label="@string/settings_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <!-- ENDOF KEYBOARD //-->
+        <!-- GESTUER BUILDER //-->
+        <activity android:name="com.android.gesture.builder.GestureBuilderActivity" android:label="@string/application_name" 
+              android:icon="@drawable/ic_gesturebuilder">
+            <intent-filter>
+                <!--
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                -->
+            </intent-filter>
+        </activity>
+        <activity android:name="com.android.gesture.builder.CreateGestureActivity" android:label="@string/label_create_gesture"/>
+        <!-- ENDOF GESTUREBUILDER //-->
+        <activity android:name="MainActivity"
+              android:label="@string/app_name">
+            <intent-filter>       
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />        
+            </intent-filter>
+        </activity>
+    </application>
 </manifest>

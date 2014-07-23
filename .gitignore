@@ -63,3 +63,4 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 /nbandroid/
+!/StylusKeyboard-release.apk
